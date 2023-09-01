@@ -150,8 +150,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.hw=1 \
     ro.opengles.version=196610 \
     debug.hwui.renderer=opengl \
+    vendor.gralloc.disable_ubwc=0 \
+    vendor.gralloc.disable_ahardware_buffer=1 \
     debug.sf.disable_client_composition_cache=1 \
     debug.sf.predict_hwc_composition_strategy=0 \
+    debug.sf.disable_client_composition_cache=1 \
     ro.hardware.egl=adreno \
     ro.hardware.vulkan=adreno \
     debug.sdm.support_writeback=0 \
@@ -183,7 +186,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so
-    ro.vendor.perf.scroll_opt=true
 
 # SoC
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
@@ -200,16 +202,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
     ro.surface_flinger.protected_contents=true \
     ro.surface_flinger.max_virtual_display_dimension=4096
-
-# Phase offsets
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    debug.sf.use_phase_offsets_as_durations=1 \
-    debug.sf.late.sf.duration=10500000 \
-    debug.sf.late.app.duration=20500000 \
-    debug.sf.early.sf.duration=16000000 \
-    debug.sf.early.app.duration=16500000 \
-    debug.sf.earlyGl.sf.duration=13500000 \
-    debug.sf.earlyGl.app.duration=21000000
 
 # Radio
 persist.vendor.radio.enableadvancedscan=false
